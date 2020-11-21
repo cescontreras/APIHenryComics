@@ -46,6 +46,10 @@ require("./middleware/passport-facebook")
 require("./middleware/passport-google");
 require("./middleware/passport-config");
 //-----------------------------------------------------//
+server.use('/', (req, res) => {
+  res.send('Hello Heroku')
+})
+
 server.use('/', routes);
 
 // Error catching endware.
