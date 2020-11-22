@@ -17,7 +17,7 @@ const server = express();
 //   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 //   origin: "http://localhost:3000"
 // }));
-server.use(cors({}))
+server.use(cors())
 
 
 server.name = 'API';
@@ -49,7 +49,7 @@ require("./middleware/passport-google");
 require("./middleware/passport-config");
 //-----------------------------------------------------//
 server.get('/', (req, res) => {
-  res.send('Hello Heroku')
+  res.status(200).send('Hello Heroku')
 })
 
 server.use('/', routes);
