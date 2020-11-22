@@ -4,16 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "react-scripts start",
-    "start": "serve -s build",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
+    "start": "node index.js" 
   },
-  "keywords": [
-    "heroku"
-  ],
   "author": "",
   "license": "ISC",
   "engines": {
@@ -46,7 +38,6 @@
     "passport-local": "^1.0.0",
     "passport-oauth2": "^1.5.0",
     "pg": "^8.3.0",
-    "sequelize": "^6.3.4",
-    "serve": "^11.3.2"
+    "sequelize": "^6.3.4"
   }
 }
