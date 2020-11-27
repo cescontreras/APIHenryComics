@@ -3,7 +3,7 @@ const { Category } = require('../db.js');
 const {isAdmin, isAuthenticated} =require('../middleware/helper');
 
 //S18: Crear ruta para crear/agregar Categoria
-server.post('/', isAdmin, (req, res) => {
+server.post('/', (req, res) => {
     const { name, description} = req.body
     Category.create({name, description})
         .then((category) => {
@@ -15,7 +15,7 @@ server.post('/', isAdmin, (req, res) => {
 })
 
 //S19: Crear Ruta para eliminar Categoria 
-server.delete('/:id', isAdmin, (req, res) =>{
+server.delete('/:id', (req, res) =>{
     const id  =  req.params.id;
     Category.destroy({
         where: {
@@ -33,7 +33,7 @@ server.delete('/:id', isAdmin, (req, res) =>{
 })
 
 //S20: Crear ruta para Modificar Categoria
-server.put('/:id', isAdmin, (req, res) =>{
+server.put('/:id', (req, res) =>{
     const id = req.params.id;
     const { name, description, price, stock, image} = req.body
     Category.update({
