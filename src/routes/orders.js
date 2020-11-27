@@ -85,7 +85,7 @@ server.get('/', (req, res) => {
 });
 
 // ordenes para un usuario especifico
-server.get('/user/:userId', isAuthenticated, (req, res) => {
+server.get('/user/:userId', (req, res) => {
   const { status} = req.query;
   let {userId} = req.params
   if (status) {

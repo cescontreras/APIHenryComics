@@ -91,6 +91,19 @@ User.findOrCreate({
 	)
 	.catch((err) => console.log(err.message));
 
+	Category.bulkCreate(categories, {
+		raw: true,
+		updateOnDuplicate: ["name"],
+	}).then((cats) => console.log("Categorias agregadas"));
+	
+	Product.bulkCreate(products, { 
+		order: ["id", "ASC"], 
+		updateOnDuplicate: ["name"] 
+	})
+		.then(() =>
+			console.log("Productos agregados")
+	);
+
 
 module.exports = {
 	...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');

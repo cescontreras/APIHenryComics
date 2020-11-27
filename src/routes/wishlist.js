@@ -5,7 +5,7 @@ const {
 } = require("sequelize");
 const { isAdmin, isAuthenticated } = require("../middleware/helper");
 
-server.post("/add/:userId", isAuthenticated, (req, res) => {
+server.post("/add/:userId", (req, res) => {
 	let body = req.body;
 	let { userId } = req.params;
 	console.log(body);

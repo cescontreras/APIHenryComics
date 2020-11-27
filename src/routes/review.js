@@ -2,7 +2,7 @@ const server = require('express').Router();
 const { Reviews } = require('../db');
 const {isAdmin, isAuthenticated} =require('../middleware/helper');
 
-server.post("/:id/user/:idUser", isAuthenticated, function (req, res) {
+server.post("/:id/user/:idUser", function (req, res) {
     var { comentarios, puntaje } = req.body;
     Reviews.create(
       {
@@ -44,7 +44,7 @@ server.post("/:id/user/:idUser", isAuthenticated, function (req, res) {
 // });
 
 //S55: Modifica Review
-server.put('/:id/review/:idReview', isAuthenticated, (req, res)=>{
+server.put('/:id/review/:idReview', (req, res)=>{
   const { id, idReview } = req.params;
   Reviews.update({
     comentarios: req.body.comentarios,
@@ -67,7 +67,7 @@ server.put('/:id/review/:idReview', isAuthenticated, (req, res)=>{
   
 })
 
-server.delete('/:idReview/product/:id', isAuthenticated, (req, res)=>{
+server.delete('/:idReview/product/:id', (req, res)=>{
   const {id, idReview} = req.params;
     
   Reviews.destroy({

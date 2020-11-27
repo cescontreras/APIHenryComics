@@ -60,7 +60,7 @@ server.get("/search", (req, res) => {
 		);
 });
 
-server.post("/create", isAdmin, (req, res) => {
+server.post("/create", (req, res) => {
 	let data = req.body;
 	Product.create(data)
 		.then((newProduct) =>
@@ -78,7 +78,7 @@ server.post("/create", isAdmin, (req, res) => {
 });
 
 //Agrega la categoria al producto.
-server.post("/:idProduct/category/:idCategory", isAdmin, (req, res) => {
+server.post("/:idProduct/category/:idCategory", (req, res) => {
 	const { idProduct, idCategory } = req.params;
 
 	Product.findByPk(idProduct)
@@ -96,7 +96,7 @@ server.post("/:idProduct/category/:idCategory", isAdmin, (req, res) => {
 });
 
 // Elimina la categoria al producto.
-server.delete("/:idProduct/category/:idCategory", isAdmin, (req, res) => {
+server.delete("/:idProduct/category/:idCategory", (req, res) => {
 	const { idProduct, idCategory } = req.params;
 
 	Product.findByPk(idProduct)
@@ -125,7 +125,7 @@ server.get("/:id", (req, res) => {
 //------------------------------------------------------//
 
 // Modifica el producto con id: id
-server.put("/:id", isAdmin, (req, res, next) => {
+server.put("/:id", (req, res, next) => {
 	const id = req.params.id;
 	Product.update(
 		{
@@ -154,7 +154,7 @@ server.put("/:id", isAdmin, (req, res, next) => {
 });
 
 // Retorna 200 si se elimino con exito.
-server.delete("/:id", isAdmin, (req, res, next) => {
+server.delete("/:id", (req, res, next) => {
 	const id = req.params.id;
 	Product.destroy({
 		where: { id: id },
