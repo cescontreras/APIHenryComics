@@ -8,7 +8,7 @@ passport.use(
 		{
 			clientID: CLIENT_ID_GOOGLE,
 			clientSecret: CLIENT_SECRET_GOOGLE,
-			callbackURL: "https://henry-comics.vercel.app/auth/google/callback",
+			callbackURL: "https://api-henrycomics.herokuapp.com/auth/google/callback",
 		},
 		function (accessToken, refreshToken, profile, cb) {
 			const user = profile._json;
