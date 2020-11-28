@@ -46,11 +46,11 @@ const linkPago = async (req, res, done) => {
 		payer: payer,
 		back_urls: {
 			// declaramos las urls de redireccionamiento
-			success: "http://localhost:3000/payment?status=Pagado",
+			success: "https://henry-comics.vercel.app/payment?status=Pagado",
 			// url a la que va a redireccionar si sale todo bien
-			pending: "http://localhost:3000/payment?status=Pendiente",
+			pending: "https://henry-comics.vercel.app/payment?status=Pendiente",
 			// url a la que va a redireccionar si decide pagar en efectivo
-			failure: "http://localhost:3000/payment?status=Cancelado",
+			failure: "https://henry-comics.vercel.app/payment?status=Cancelado",
 			// url a la que va a redireccionar si falla el pago
 		},
 		binary_mode: true,

@@ -182,7 +182,7 @@ server.post('/mail',async(req,res) => {
     let {status} = req.query
     console.log(status)
     console.log('check....',productiños)
-    const {data} = await axios.get(`http://localhost:3001/orders/${productiños}`)
+    const {data} = await axios.get(`https://api-henrycomics.herokuapp.com/orders/${productiños}`)
     // aca se manda el mail
     console.log(data)
     let variable = {
