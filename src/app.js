@@ -13,9 +13,9 @@ require('./db.js');
 const server = express();
 
 server.use(cors({
+  origin: "https://henry-comics.vercel.app/",
+  // methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  origin: "http://localhost:3000"
 }));
 
 server.name = 'API';
