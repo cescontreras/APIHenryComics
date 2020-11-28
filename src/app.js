@@ -14,7 +14,6 @@ const server = express();
 
 server.use(cors({
   origin: "https://henry-comics.vercel.app/",
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
 }));
 
@@ -22,7 +21,7 @@ server.name = 'API';
 
 server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 server.use(bodyParser.json({ limit: '50mb' }));
-server.use(cookieParser('secretcode'));
+server.use(cookieParser());
 server.use(morgan('dev'));
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'https://henry-comics.vercel.app/'); // update to match the domain you will make the request from
