@@ -8,7 +8,7 @@ passport.use(
 		{
 			clientID: CLIENT_ID_FACEBOOK,
 			clientSecret: CLIENT_SECRET_FACEBOOK,
-			callbackURL: "http://localhost:3001/auth/facebook/callback",
+			callbackURL: "https://henry-comics.vercel.app/auth/facebook/callback",
 			profileFields: ["id", "displayName", "photos", "email"],
 		},
 		function (accessToken, refreshToken, profile, done) {

@@ -34,11 +34,11 @@ server.get('/google', passport.authenticate('google', {
 }));
 
 server.get('/google/callback',
-  passport.authenticate('google', { successRedirect: 'http://localhost:3000'})
+  passport.authenticate('google', { successRedirect: 'https://henry-comics.vercel.app/'})
 );
 
 server.get('/facebook', passport.authenticate('facebook'))
 
 
-server.get('/facebook/callback', passport.authenticate('facebook', {successRedirect:'http://localhost:3000'}))
+server.get('/facebook/callback', passport.authenticate('facebook', {successRedirect:'https://henry-comics.vercel.app/'}))
 module.exports = server;
